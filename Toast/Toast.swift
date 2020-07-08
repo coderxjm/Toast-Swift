@@ -424,7 +424,7 @@ public extension UIView {
         let wrapperView = UIView()
         wrapperView.backgroundColor = style.backgroundColor
         wrapperView.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleTopMargin, .flexibleBottomMargin]
-        wrapperView.layer.cornerRadius = style.cornerRadius
+        
         
         if style.displayShadow {
             wrapperView.layer.shadowColor = UIColor.black.cgColor
@@ -508,7 +508,7 @@ public extension UIView {
         let wrapperHeight = max((messageRect.origin.y + messageRect.size.height + style.verticalPadding), (imageRect.size.height + (style.verticalPadding * 2.0)))
         
         wrapperView.frame = CGRect(x: 0.0, y: 0.0, width: wrapperWidth, height: wrapperHeight)
-        
+        wrapperView.layer.cornerRadius = wrapperHeight * 0.5
         if let titleLabel = titleLabel {
             titleRect.size.width = longerWidth
             titleLabel.frame = titleRect
